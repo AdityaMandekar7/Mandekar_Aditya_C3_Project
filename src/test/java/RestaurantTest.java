@@ -72,15 +72,22 @@ class RestaurantTest {
     //<<<<<<<<<<<<<<<<<<<<<<<MENU>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
     //<<<<<<<<<<<<<<<<<<<<<<<Total Order Value>>>>>>>>>>>>>>>>>>>>>>>>>>>>> 
-    
+
 @Test
 public void order_value_should_not_be_380_when_SweetCornSoup_and_Vegetable_lasagne_are_ordered() throws restaurantNotFoundException {
-    //Arrange
     List<String> orderedItems = Arrays.asList("Sweet corn soup", "Vegetable lasagne");
 
     int totalOrderValue = restaurant.getOrderValue(orderedItems);
     assertNotEquals(totalOrderValue, 380);
 }
+
+@Test
+    public void order_value_should_be_388_when_SweetCornSoup_and_Vegetable_lasagne_are_ordered() throws restaurantNotFoundException {
+        List<String> orderedItems = Arrays.asList("Sweet corn soup", "Vegetable lasagne");
+
+        int totalOrderValue = restaurant.getOrderValue(orderedItems);
+        assertEquals(totalOrderValue, 388);
+    }
 
 //<<<<<<<<<<<<<<<<<<<<<<<Total Order Value>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 }
